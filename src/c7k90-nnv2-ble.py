@@ -18,7 +18,7 @@ vcc_enable.value = True
 time.sleep(0.5)
 
 # Setup I2C for MCP23008
-i2c = busio.I2C(scl=board.SCL, sda=board.SDA)
+i2c = busio.I2C(scl=board.SCL, sda=board.SDA, frequency=400000)
 mcp = MCP23008(i2c)
 
 # Set up MCP23017 pins as inputs with pull-ups
@@ -39,9 +39,9 @@ pin_to_key_index = {
     1: 1,  # physical pin 1 → key index 1
     2: 2,  # physical pin 2 → key index 2
     3: 3,  # physical pin 3 → key index 3
-    6: 4,  # physical pin 4 → key index 4
+    4: 4,  # physical pin 4 → key index 4
     5: 5,  # physical pin 5 → key index 5
-    4: 6   # physical pin 6 → key index 6
+    6: 6   # physical pin 6 → key index 6
 }
 
 # Variables for handling key states and chords
